@@ -9,7 +9,7 @@ function handleSubmit(event) {
     console.log(formText)
     postData('http://localhost:8081/articleinfo', { url: formText }).then((data) => {
         console.log("data recieved", data);
-        document.getElementById('results').innerHTML = data.agreement + " " + data.confidence;
+        document.getElementById('results').innerHTML = data.agreement + " " + data.confidence + " " + data.subjectivity + " " + data.irony;
     });
 }
 const postData = async(url = '', data = {}) => {
